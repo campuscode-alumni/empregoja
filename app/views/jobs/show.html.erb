@@ -4,3 +4,6 @@
 <p><strong>Empresa:</strong> <%= @job.company %></p>
 <p><strong>Descrição Completa:</strong> <%= @job.description %></p>
 <p><strong>Localização:</strong> <%= @job.location %></p>
+<% if @job.featured? %>
+  <strong>Vaga em Destaque</strong>
+<% end %>
