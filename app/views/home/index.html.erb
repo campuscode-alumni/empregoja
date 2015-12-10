@@ -1,7 +1,16 @@
-<% @jobs.each do |job| %>
-  <h3><%= job.title %></h3>
-  <p><%= job.company.name %></p>
-  <p><%= job.location %></p>
-  <%= link_to 'Ver mais', job %>
-<% end %>
+<section id="jobs">
+  <% @jobs.each do |job| %>
+    <div class="jobs">
+      <h3><%= job.title %></h1>
+      <p><%= job.location %></p>
+      <p><%= job.company.name %></p>
+      <%= link_to 'Ver mais', job %>
+    </div>
+  <% end %>
+</section>
+<aside>
+  <% @companies.each do |company| %>
+    <%= link_to company.name, company %>
+  <% end %>
+</aside>
 

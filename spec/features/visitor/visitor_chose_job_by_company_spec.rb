@@ -11,7 +11,7 @@ feature 'Visitor choose jobs by company' do
                      category:    'Desenvolvedor',
                      description: 'Dev Junior Rails com ao menos um projeto',
                      location:    'São Paulo',
-                     company_id:  company.id)
+                     company:  company)
     visit root_path
 
     click_on company.name
@@ -38,7 +38,7 @@ feature 'Visitor choose jobs by company' do
                      category:    'Desenvolvedor',
                      description: 'Dev Junior Rails com ao menos um projeto',
                      location:    'São Paulo',
-                     company_id:  company.id)
+                     company:  company)
 
     visit root_path
 
