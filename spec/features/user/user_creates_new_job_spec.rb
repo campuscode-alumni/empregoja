@@ -56,4 +56,14 @@ feature 'User creates a new job' do
     expect(page).to have_content job.description
     expect(page).to have_content 'Vaga em Destaque'
   end
+
+  scenario 'invalid data' do
+    visit new_job_path
+
+    click_on 'Criar Vaga'
+
+    ['Title', 'Category', 'Description', 'Location'].each do |field|
+      expect(page).to have_content "#{field} can\'t be blank"
+    end
+  end
 end
