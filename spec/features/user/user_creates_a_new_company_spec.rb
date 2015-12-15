@@ -23,4 +23,10 @@ feature 'User creates a new company' do
     expect(page).to have_content company.phone
   end
 
+  scenario 'invalid' do
+    visit new_company_path
+    click_on 'Criar Empresa'
+
+    expect(page).to have_content "Warning! All fields are mandatory."
+  end
 end
