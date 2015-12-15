@@ -1,13 +1,23 @@
 class JobsController < ApplicationController
-  before_action :set_companies, only: [:new, :create]
-  before_action :set_categories, only: [:new, :create]
+  before_action :set_collections, only: [:new, :create, :edit]
+  before_action :set_job, only: [:edit, :show, :update]
 
   def show
-    @job = Job.find(params[:id])
   end
 
   def new
     @job = Job.new
+  end
+
+  def edit
+  end
+
+  def update
+    if @job.update(job_params)
+      redirect_to @job
+    else
+      render :edit
+    end
   end
 
   def create
@@ -21,12 +31,13 @@ class JobsController < ApplicationController
 
   private
 
-  def set_categories
+  def set_collections
     @categories = Category.all
+    @companies = Company.all
   end
 
-  def set_companies
-    @companies = Company.all
+  def set_job
+    @job = Job.find(params[:id])
   end
 
   def job_params

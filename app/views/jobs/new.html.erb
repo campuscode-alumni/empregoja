@@ -1,25 +1,3 @@
-<div id="errors">
-<% if @job.errors.any? %>
-<ul>
-  <% @job.errors.full_messages.each do |msg| %>
-    <li><%= msg %></li>
-  <% end %>
-</ul>
-<% end %>
-</div>
-<%= form_for @job do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :location %>
-  <%= f.text_field :location %>
-  <%= f.label :company_id %>
-  <%= f.collection_select :company_id, @companies, :id, :name %>
-  <%= f.label :category_id %>
-  <%= f.collection_select :category_id, @categories, :id, :name %>
-  <%= f.text_field :category %>
-  <%= f.label :featured  %>
-  <%= f.check_box :featured  %>
-  <%= f.label :description %>
-  <%= f.text_area :description %>
-  <%= f.submit 'Criar Vaga' %>
-<% end %>
+<h1>Nova Vaga</h1>
+<hr>
+<%= render partial: 'form', locals: { submit_text: 'Criar Vaga' } %>
