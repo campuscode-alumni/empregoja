@@ -14,4 +14,9 @@
     <%= link_to company.name, company %>
   <% end %>
 </aside>
+<aside>
+  <% @categories.each do |category| %>
+    <%= link_to category.name, category %>
+  <% end %>
+</aside>
 
