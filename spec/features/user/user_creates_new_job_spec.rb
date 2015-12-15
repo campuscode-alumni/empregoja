@@ -26,7 +26,7 @@ feature 'User creates a new job' do
 
     expect(page).to have_content job.title
     expect(page).to have_content job.location
-    expect(page).to have_content job.category
+    expect(page).to have_content job.category.name
     expect(page).to have_content company.name
     expect(page).to have_content job.description
   end
@@ -55,7 +55,7 @@ feature 'User creates a new job' do
 
     expect(page).to have_content job.title
     expect(page).to have_content job.location
-    expect(page).to have_content job.category
+    expect(page).to have_content job.category.name
     expect(page).to have_content company.name
     expect(page).to have_content job.description
     expect(page).to have_content 'Vaga em Destaque'

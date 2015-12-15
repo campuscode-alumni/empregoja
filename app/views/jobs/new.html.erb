@@ -14,7 +14,8 @@
   <%= f.text_field :location %>
   <%= f.label :company_id %>
   <%= f.collection_select :company_id, @companies, :id, :name %>
-  <%= f.label :category %>
+  <%= f.label :category_id %>
+  <%= f.collection_select :category_id, @categories, :id, :name %>
   <%= f.text_field :category %>
   <%= f.label :featured  %>
   <%= f.check_box :featured  %>

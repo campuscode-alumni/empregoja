@@ -20,7 +20,7 @@ feature 'Visitor visits job details' do
     click_on 'Ver mais'
 
     expect(page).to have_content job.title
-    expect(page).to have_content job.category
+    expect(page).to have_content job.category.name
     expect(page).to have_content company.name
     expect(page).to have_content job.description
     expect(page).to have_content job.location
