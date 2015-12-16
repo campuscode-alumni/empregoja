@@ -1,0 +1,12 @@
+<span class="error_message"><%= flash[:warning] %></span>
+<%= form_for @company do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.label :location %>
+  <%= f.text_field :location %>
+  <%= f.label :mail %>
+  <%= f.text_field :mail %>
+  <%= f.label :phone %>
+  <%= f.text_field :phone %>
+  <%= f.submit submit_text %>
+<% end %>
