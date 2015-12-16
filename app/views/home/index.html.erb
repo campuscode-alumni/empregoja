@@ -5,6 +5,9 @@
       <p><%= job.location %></p>
       <p><%= job.company.name %></p>
       <p><%= job.category.name %></p>
+      <% if job.recent? %>
+        <p><em>Novidade</em></p>
+      <% end %>
       <%= link_to 'Ver mais', job %>
     </div>
   <% end %>
