@@ -1,12 +1,33 @@
-<span class="error_message"><%= flash[:warning] %></span>
-<%= form_for @company do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.label :location %>
-  <%= f.text_field :location %>
-  <%= f.label :mail %>
-  <%= f.text_field :mail %>
-  <%= f.label :phone %>
-  <%= f.text_field :phone %>
-  <%= f.submit submit_text %>
-<% end %>
+<span class="error_message alert alert-warning"><%= flash[:warning] %></span>
+<div class="col-md-3 col-md-offset-2">
+  <div class="panel panel-info ">
+    <div class="panel-heading">
+      <div class="panel-title">
+        <h3>Company registration</h3>
+      </div>
+    </div>
+    <%= form_for @company do |f| %>
+    <div class="panel-body">
+      <div class="company_form">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control", placeholder: "Fill company name" %>
+      </div>
+      <div class="company_form">
+        <%= f.label :location %>
+        <%= f.text_field :location, class: "form-control", placeholder: "Fill company location" %>
+      </div>
+      <div class="company_form">
+        <%= f.label :mail %>
+        <%= f.text_field :mail, class: "form-control", type: "mail", placeholder: "Fill company mail" %>
+      </div>
+      <div class="company_form">
+        <%= f.label :phone %>
+        <%= f.text_field :phone, class: "form-control", placeholder: "Fill company phone" %>
+      </div>
+      <div class="company_submit"><br>
+        <%= f.submit submit_text, class: "btn btn-success btn-md" %>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
