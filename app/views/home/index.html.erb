@@ -7,17 +7,28 @@
         </div>
       </div>
       <% @jobs.each do |job| %>
-      <div class="jobs">
-        <h3><%= job.title %></h1>
-        <p><%= job.location %></p>
-        <p><%= job.company.name %></p>
-        <p><%= job.category.name %></p>
-        <% if job.recent? %>
+      <div class="jobs col-md-offset-1">
+        <h3><%= job.title %>
+          <% if job.recent? %>
+          <span class="col-md-offset-1 label label-danger">
+            <em class="glyphicon glyphicon-fire">New!</em>
+          </span>
+        </h3>
         <p>
-          <em>Novidade</em>
-        </p>
+          <strong>Job Location:
+          </strong><%= job.location %></p>
+        <p>
+          <strong>Company Name:
+          </strong><%= job.company.name %></p>
+        <p>
+          <strong>Category Name:
+          </strong><%= job.category.name %></p>
+        <h4>
+          <span class="btn btn-default">
+            <a class="glyphicon glyphicon-share-alt"><%= link_to 'See more', job %></a>
+          </span>
+        </h4>
         <% end %>
-        <%= link_to 'Ver mais', job %>
       </div>
       <% end %>
     </div>
@@ -31,18 +42,18 @@
           <h3>Companies available</h3>
         </div>
       </div>
-      <div class="panel-body">
-      <% @companies.each do |company| %>
-        <%= link_to company.name, company %>
-        <% if company.premium? %>
-        <p>
-          Empresa Premium
-        </p>
-        <% end %>
+          <% @companies.each do |company| %>
+          <div class="panel-body">
+            <%= link_to company.name, company, class: "btn btn-default col-md-10 col-md-offset-1" %>
+            <% if company.premium? %>
+            <span class="col-md-offset-1 label label-danger">
+              <em class="glyphicon glyphicon-fire">Premium!</em>
+            </span>
+          </div>
       </div>
-    </div>
-    <% end %>
+        <% end %>
   </div>
+<% end %>
 </aside>
 <aside>
   <div class="col-md-2">
@@ -53,8 +64,10 @@
         </div>
       </div>
       <% @categories.each do |category| %>
-      <%= link_to category.name, category %>
-    </div>
+      <div class="panel-body">
+        <%= link_to category.name, category, class: "btn btn-default col-md-10 col-md-offset-1" %>
+      </div>
     <% end %>
+    </div>
   </div>
 </aside>
