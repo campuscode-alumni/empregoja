@@ -1,9 +1,9 @@
 <div class="row">
   <div class="col-md-10">
-      <div class="row">
-        <div class="col-md-6">
+    <div class="row">
           <% @jobs.each do |job| %>
-          <div class="panel panel-info">
+          <div class="col-md-6">
+            <div class="panel panel-info">
             <div class="panel-heading">
               <div class="panel-title">
                 <h3><%= job.title %>
@@ -36,8 +36,8 @@
               </div>
             </div>
           </div>
+          </div>
           <% end %>
-        </div>
       </div>
   </div>
   <div class="col-md-2">
@@ -56,8 +56,8 @@
               <em class="glyphicon glyphicon-fire">Empresa Premium</em>
             </span>
           </div>
-        </div>
         <% end %>
+        </div>
       <% end %>
     </aside>
 
