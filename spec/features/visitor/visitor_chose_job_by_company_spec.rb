@@ -54,5 +54,4 @@ feature 'Visitor choose jobs by company' do
     expect(page).not_to have_content job.description
     expect(page).not_to have_content job.location
   end
-
 end

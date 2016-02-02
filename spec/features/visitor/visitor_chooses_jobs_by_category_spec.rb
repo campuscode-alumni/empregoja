@@ -10,10 +10,10 @@ feature 'Visitor chooses jobs by category' do
     category = Category.create(name: 'Desenvolvedor')
 
     job = Job.create(title: 'Vaga de Dev',
-               description: 'Dev Junior Rails com ao menos um projeto',
-               location: 'São Paulo',
-               company: company,
-               category: category)
+                     description: 'Dev Junior Rails com ao menos um projeto',
+                     location: 'São Paulo',
+                     company: company,
+                     category: category)
 
     job_2 = Job.create(title: 'Vaga de Dev',
                        description: 'Dev Junior Rails com ao menos um projeto',
@@ -64,5 +64,4 @@ feature 'Visitor chooses jobs by category' do
     expect(page).not_to have_content job.description
     expect(page).not_to have_content job.location
   end
-
 end

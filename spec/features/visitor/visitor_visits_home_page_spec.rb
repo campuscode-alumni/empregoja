@@ -7,9 +7,9 @@ feature 'Visitor visits Emprego Ja home page' do
   end
   scenario 'and see jobs' do
     company = Company.create(name: 'Campus Code',
-                            location: 'São Paulo',
-                            mail: 'contato@campus.com.br',
-                            phone: '2369-3476')
+                             location: 'São Paulo',
+                             mail: 'contato@campus.com.br',
+                             phone: '2369-3476')
 
     category = Category.create(name: 'Desenvolvedor')
 

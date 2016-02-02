@@ -3,9 +3,9 @@ require 'rails_helper'
 feature 'User creates a new job' do
   scenario 'successfully' do
     company = Company.create(name: 'Campus Code',
-                            location: 'São Paulo',
-                            mail: 'contato@campus.com.br',
-                            phone: '2369-3476')
+                             location: 'São Paulo',
+                             mail: 'contato@campus.com.br',
+                             phone: '2369-3476')
 
     category = Category.create(name: 'Desenvolvedor')
 
@@ -33,9 +33,9 @@ feature 'User creates a new job' do
 
   scenario 'featured job' do
     company = Company.create(name: 'Campus Code',
-                            location: 'São Paulo',
-                            mail: 'contato@campus.com.br',
-                            phone: '2369-3476')
+                             location: 'São Paulo',
+                             mail: 'contato@campus.com.br',
+                             phone: '2369-3476')
 
     category = Category.create(name: 'Desenvolvedor')
 
@@ -49,7 +49,7 @@ feature 'User creates a new job' do
     select category.name,  from: 'Category'
     select company.name,   from: 'Company'
     fill_in 'Description', with: job.description
-    check   'Featured'
+    check 'Featured'
 
     click_on 'Criar Vaga'
 
@@ -66,7 +66,7 @@ feature 'User creates a new job' do
 
     click_on 'Criar Vaga'
 
-    ['Title', 'Category', 'Description', 'Location'].each do |field|
+    %w(Title Category Description Location).each do |field|
       expect(page).to have_content "#{field} can\'t be blank"
     end
   end

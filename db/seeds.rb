@@ -14,8 +14,9 @@ new_company = Company.create(name:     'Code Campus',
 category = Category.create(name: 'Desenvolvedor')
 new_category = Category.create(name: 'Dev Ninja')
 new_job = Job.create(title: 'Dev Master', location: 'Rio de Janeiro', company: new_company, category: new_category, description: 'Vaga para Dev Master para Bootcamp Rails', featured: true)
-job = Job.create(title: 'Vaga de Dev',
-           description: 'Dev Junior Rails com ao menos um projeto',
-           location: 'São Paulo',
-           company: company,
-           category: category)
+job = Job.create(title: 'Vaga de Rails',
+                 description: 'Dev Junior Rails com ao menos um projeto',
+                 location: 'São Paulo',
+                 company: company,
+                 category: category)
+expired_job = Job.create(title: 'Vaga de Dev', location: 'Rio de Janeiro', company: new_company, category: new_category, description: 'Vaga para Dev Master para Bootcamp Rails', featured: true, created_at: 90.days.ago)

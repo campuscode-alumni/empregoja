@@ -1,65 +1,65 @@
 <div class="row">
   <div class="col-md-10">
     <div class="row">
-          <% @jobs.each do |job| %>
-          <div class="col-md-6">
-            <div class="panel panel-info">
-            <% if job.expired? == false %>
-            <div class="panel-heading">
-              <div class="panel-title">
-                <h3 class='jobs'><%= job.title %>
-                    <% if job.recent? %>
-                    <span class="pull-right label label-danger">
-                      <em class="glyphicon glyphicon-fire">Novidade</em>
-                    </span>
-                    <% end %>
-                </h3>
+      <% @jobs.each do |job| %>
+      <% if job.expired? == false %>
+      <div class="col-md-6">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <div class="panel-title">
+              <h3 class='jobs'><%= job.title %>
+                <% if job.recent? %>
+                <span class="pull-right label label-danger">
+                  <em class="glyphicon glyphicon-fire">Novidade</em>
+                </span>
+                <% end %>
+              </h3>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="row">
+              <div class="col-md-10 col-md-offset-1">
+                <p>
+                  <strong>Job Location:
+                  </strong><%= job.location %></p>
+                <p>
+                  <strong>Company Name:
+                  </strong><%= job.company.name %></p>
+                <p>
+                  <strong>Category Name:
+                  </strong><%= job.category.name %></p>
+                <h4>
+                  <span class="btn btn-default">
+                    <a class="glyphicon glyphicon-share-alt"><%= link_to 'Ver mais', job %></a>
+                  </span>
+                </h4>
               </div>
             </div>
-            <div class="panel-body">
-              <div class="row">
-                <div class="col-md-10 col-md-offset-1">
-                  <p>
-                    <strong>Job Location:
-                    </strong><%= job.location %></p>
-                  <p>
-                    <strong>Company Name:
-                    </strong><%= job.company.name %></p>
-                  <p>
-                    <strong>Category Name:
-                    </strong><%= job.category.name %></p>
-                  <h4>
-                    <span class="btn btn-default">
-                      <a class="glyphicon glyphicon-share-alt"><%= link_to 'Ver mais', job %></a>
-                    </span>
-                  </h4>
-                </div>
-              </div>
-            </div>
-            <% end %>
           </div>
-          </div>
-          <% end %>
+        </div>
       </div>
+      <% end %>
+      <% end %>
+    </div>
   </div>
   <div class="col-md-2">
     <aside>
-        <div class="panel panel-info ">
-          <div class="panel-heading">
-            <div class="panel-title">
-              <h3>Companies</h3>
-            </div>
+      <div class="panel panel-info ">
+        <div class="panel-heading">
+          <div class="panel-title">
+            <h3>Companies</h3>
           </div>
-          <% @companies.each do |company| %>
-          <div class="row panel-body">
-            <%= link_to company.name, company, class: "btn btn-default col-md-10 col-md-offset-1" %>
-            <% if company.premium? %>
-            <span class="col-md-offset-1 label label-danger">
-              <em class="glyphicon glyphicon-fire">Empresa Premium</em>
-            </span>
-          </div>
-        <% end %>
         </div>
+        <% @companies.each do |company| %>
+        <div class="row panel-body">
+          <%= link_to company.name, company, class: "btn btn-default col-md-10 col-md-offset-1" %>
+          <% if company.premium? %>
+          <span class="col-md-offset-1 label label-danger">
+            <em class="glyphicon glyphicon-fire">Empresa Premium</em>
+          </span>
+        </div>
+        <% end %>
+      </div>
       <% end %>
     </aside>
 
@@ -76,6 +76,6 @@
         </div>
         <% end %>
       </div>
-  </aside>
+    </aside>
   </div>
 </div>

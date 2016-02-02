@@ -2,7 +2,6 @@ require 'rails_helper'
 
 feature 'Visitor view premium companies' do
   scenario 'successfully' do
-
     company = create_company
 
     5.times do
