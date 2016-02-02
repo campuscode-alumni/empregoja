@@ -4,6 +4,7 @@
           <% @jobs.each do |job| %>
           <div class="col-md-6">
             <div class="panel panel-info">
+            <% if job.expired? == false %>
             <div class="panel-heading">
               <div class="panel-title">
                 <h3 class='jobs'><%= job.title %>
@@ -35,6 +36,7 @@
                 </div>
               </div>
             </div>
+            <% end %>
           </div>
           </div>
           <% end %>
