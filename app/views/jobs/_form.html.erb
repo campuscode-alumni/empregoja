@@ -1,0 +1,22 @@
+<div id="errors">
+  <div class="col-md-3 col-md-offset-2">
+    <div class="panel panel-info ">
+      <div class="panel-heading">
+        <div class="panel-title">
+          <h3>Job registration</h3>
+        </div>
+      </div>
+      <div class="panel-body">
+        <%= simple_form_for @job do |f| %>
+            <%= f.input :title, class: "form-control", placeholder: "Fill job name", error: "Title can't be blank" %>
+            <%= f.input :location, class: "form-control", placeholder: "Fill job location", error: "Location can't be blank" %>
+            <%= f.association :company, prompt: "Select Company", error: "Select a valid Company" %>
+            <%= f.association :category, prompt: "Select Category", error: "Category can't be blank" %>
+            <%= f.input :featured, disabled: false  %>
+            <%= f.input :description, placeholder: "Job description", as: :text, error: "Description can't be blank",input_html: {rows: 5, style: "resize: none", maxlength: "400" } %>
+            <%= f.button :submit, value: submit_text, class:"btn-success btn-lg" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="col-md-3 col-md-offset-2">
+  <h2><%= @job.title %></h2>
+  <hr>
+  <p><strong>Category:</strong> <%= @job.category.name %></p>
+  <p><strong>Company:</strong> <%= @job.company.name%></p>
+  <p><strong>Description:</strong> <%= @job.description %></p>
+  <p><strong>Location:</strong> <%= @job.location %></p>
+  <% if @job.featured? %>
+    <strong>Vaga em Destaque</strong>
+  <% end %>
+  <% if @job.expired?  %>
+  <p> Vaga Expirada </p>
+  <% end  %>
+</div>

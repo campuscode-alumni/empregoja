@@ -1,0 +1,27 @@
+<span class="error_message col-md-offset-8"><%= flash[:warning]%></span>
+<div class="container col-md-3 col-md-offset-2">
+  <div class="panel panel-info">
+    <div class="panel-heading">
+      <div class="panel-title">
+        <h2>Category registration</h2>
+      </div>
+    </div>
+    <div class="panel-body">
+      <%= form_for @category do |f| %>
+      <div class="category_form">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control", placeholder: "Fill category name here" %>
+      </div>
+      <div class="category_submit"><br>
+        <%= f.submit 'Criar Categoria', class: "btn btn-md btn-success"%>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<!-- <%= form_for @category do |f| %>
+  <%= f.label :name  %>
+  <%= f.text_field :name  %>
+  <%= f.submit 'Criar Categoria' %>
+<% end %> -->

@@ -1,0 +1,10 @@
+<div class="col-md-3 col-md-offset-2">
+  <h1><%= @category.name %></h1>
+  <h2>Jobs</h2>
+  <% @category.jobs.each do |job| %>
+    <h4><%= job.title %></h4>
+    <p><strong>Job Location: </strong><%= job.location %></p>
+    <p><strong>Job Description: </strong><%= job.description %></p>
+    <hr>
+  <% end %>
+</div>
