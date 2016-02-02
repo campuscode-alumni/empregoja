@@ -1,6 +1,39 @@
 require 'rails_helper'
 
+DATE = 90
+
 RSpec.describe Job, type: :model do
+
+  describe "#expired?" do
+
+    context "after #{DATE - 1} days" do
+      it "is not expired" do
+        job = create_job
+        travel_to (DATE - 1).days.from_now do
+        end
+        expect(job).not_to be_expired
+      end
+    end
+
+    context "after #{DATE} days" do
+      it "is expired" do
+        job = create_job
+        travel_to DATE.days.from_now do
+        end
+        expect(job).to be_expired
+      end
+    end
+
+    context "after #{DATE + 1} days" do
+      it "is expired" do
+        job = create_job
+        travel_to (DATE + 1).days.from_now do
+        end
+        expect(job).to be_expired
+      end
+    end
+
+  end
 
   describe "#recent?" do
 
@@ -10,6 +43,7 @@ RSpec.describe Job, type: :model do
         expect(job).to be_recent
       end
     end
+
 
     context "created 6 days ago" do
       it "is not recent" do
